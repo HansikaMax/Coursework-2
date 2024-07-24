@@ -11,10 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="14.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" width="200.0">
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="14.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" width="200.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -32,7 +31,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Label alignment="CENTER" layoutX="162.0" layoutY="9.0" prefHeight="57.0" prefWidth="238.0" text="LBMS User Interface" textFill="#4be35a">
+      <Label fx:id="titleLabel" alignment="CENTER" layoutX="162.0" layoutY="9.0" prefHeight="57.0" prefWidth="238.0" text="LBMS User Interface" textFill="#4be35a">
          <font>
             <Font size="24.0" />
          </font>
@@ -49,7 +48,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <JFXButton fx:id="btnEnter" layoutX="442.0" layoutY="306.0" prefHeight="47.0" prefWidth="86.0" style="-fx-background-color: #f39c12;" text="Enter" textFill="#1c27bf">
+      <JFXButton fx:id="btnEnter" layoutX="442.0" layoutY="306.0" onAction="#enterOnAction" prefHeight="47.0" prefWidth="86.0" style="-fx-background-color: #f39c12;" text="Enter" textFill="#1c27bf">
          <font>
             <Font size="18.0" />
          </font>
