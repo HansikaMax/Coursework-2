@@ -6,34 +6,34 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
       <Label fx:id="lblTitle" alignment="CENTER" layoutX="154.0" layoutY="14.0" prefHeight="65.0" prefWidth="292.0" text="LBMS HOME INTERFACE" textFill="#197279">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnBooks" buttonType="RAISED" layoutX="60.0" layoutY="99.0" prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #1abc9c;" text="Books">
+      <JFXButton fx:id="btnBooks" buttonType="RAISED" layoutX="60.0" layoutY="99.0" onAction="#booksOnAction" prefHeight="45.0" prefWidth="85.0" style="-fx-background-color: #1abc9c;" text="Books">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnMembers" buttonType="RAISED" layoutX="430.0" layoutY="96.0" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: #e67e22;" text="Members">
+      <JFXButton fx:id="btnMembers" buttonType="RAISED" layoutX="430.0" layoutY="96.0" onAction="#membersOnAction" prefHeight="52.0" prefWidth="97.0" style="-fx-background-color: #e67e22;" text="Members">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnBookType" buttonType="RAISED" layoutX="225.0" layoutY="96.0" prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #3498db;" text="Book Types">
+      <JFXButton fx:id="btnBookType" buttonType="RAISED" layoutX="225.0" layoutY="96.0" onAction="#bookTypesOnAction" prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #3498db;" text="Book Types">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnBorrowBooks" buttonType="RAISED" layoutX="79.0" layoutY="208.0" prefHeight="65.0" prefWidth="136.0" style="-fx-background-color: #9b59b6;" text="Borrow Books">
+      <JFXButton fx:id="btnBorrowBooks" buttonType="RAISED" layoutX="79.0" layoutY="208.0" onAction="#borrowBooksOnAction" prefHeight="65.0" prefWidth="136.0" style="-fx-background-color: #9b59b6;" text="Borrow Books">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnOverdueMembers" buttonType="RAISED" layoutX="324.0" layoutY="208.0" prefHeight="52.0" prefWidth="170.0" style="-fx-background-color: #f1c40f;" text="Overdue Members">
+      <JFXButton fx:id="btnOverdueMembers" buttonType="RAISED" layoutX="324.0" layoutY="208.0" onAction="#overdueMembersOnAction" prefHeight="52.0" prefWidth="170.0" style="-fx-background-color: #f1c40f;" text="Overdue Members">
          <font>
             <Font size="18.0" />
          </font>
