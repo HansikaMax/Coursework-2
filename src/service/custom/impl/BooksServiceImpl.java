@@ -6,9 +6,9 @@ import dao.DaoFactory;
 import dao.custom.BooksDao;
 import dto.BooksDto;
 import entity.BooksEntity;
-import service.custom.BooksSevice;
+import service.custom.BooksService;
 
-public class BooksServiceImpl implements BooksSevice {
+public class BooksServiceImpl implements BooksService {
 
      private BooksDao booksDao = (BooksDao) DaoFactory.getInstance().getDao(DaoFactory.DaoTypes.Books);
 

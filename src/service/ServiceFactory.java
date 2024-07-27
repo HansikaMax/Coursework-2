@@ -15,7 +15,7 @@ public class ServiceFactory {
         return serviceFactory;
     }
 
-public SuperService getService(ServiceTypes type){
+public SuperService getService(ServiceType type){
     switch (type) {
         case BookCategories:
             return null;
@@ -28,7 +28,7 @@ public SuperService getService(ServiceTypes type){
     }
 }
 
-public enum ServiceTypes{
+public enum ServiceType{
     BookCategories, Books, Members;
 }
 }

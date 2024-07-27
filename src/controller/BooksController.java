@@ -1,12 +1,24 @@
 package controller;
 
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 import com.jfoenix.controls.JFXButton;
 
+import dto.BooksDto;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import service.ServiceFactory;
+import service.custom.BooksService;
 
 public class BooksController {
     
@@ -19,20 +31,28 @@ public class BooksController {
     @FXML
     private JFXButton btnUpdate;
 
-    @FXML
-    private TableColumn<?, ?> colAuthor;
 
     @FXML
-    private TableColumn<?, ?> colBookID;
+    private TableView<BooksDto> tblBooks;
+
 
     @FXML
-    private TableColumn<?, ?> colCtName;
+    private TableColumn<BooksDto, String> colAuthor;
 
     @FXML
-    private TableColumn<?, ?> colPbYear;
+    private TableColumn<BooksDto, Integer> colBookID;
 
     @FXML
-    private TableColumn<?, ?> colTitle;
+    private TableColumn<BooksDto, String> colCtName;
+
+    @FXML
+    private TableColumn<BooksDto, String> colPbYear;
+
+    @FXML
+    private TableColumn<BooksDto, String> colTitle;
+
+    @FXML
+    private TableColumn<BooksDto, String> colStatus;
 
     @FXML
     private Label lblAuthor;
@@ -77,6 +97,52 @@ public class BooksController {
     @FXML
     void updateOnAction(ActionEvent event) {
 
+    }
+
+    private BooksService booksService = (BooksService)ServiceFactory.getInstance().getService(ServiceFactory.ServiceType.Books);
+    
+    public String save(BooksDto booksDto) throws Exception{
+       return booksService.save(booksDto);
+    }
+
+    public String update(BooksDto booksDto) throws Exception{
+       return booksService.update(booksDto);
+    }
+
+    public String delete(Integer bookID) throws Exception{
+       return booksService.delete(bookID);
+    }
+
+    public ArrayList<BooksDto> getAll() throws Exception{
+       return booksService.getAll();
+    }
+
+    public BooksDto get(String itemCode) throws Exception{
+        return null;
+    }
+
+
+    private void loadTable() throws Exception {
+       
+       ArrayList<BooksDto> booksList=getAll();
+      ObservableList<BooksDto> booksObservableList = FXCollections.observableArrayList();
+      
+      for(BooksDto booksDto: booksList){
+        booksObservableList.add(booksDto);
+      }
+        tblBooks.setItems(booksObservableList);
+    }
+        
+
+        public void initialize() throws Exception {
+            colBookID.setCellValueFactory(new PropertyValueFactory<>("bookID"));
+        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        colAuthor .setCellValueFactory(new PropertyValueFactory<>("author"));
+        colPbYear.setCellValueFactory(new PropertyValueFactory<>("publicationYear"));
+        colCtName.setCellValueFactory(new PropertyValueFactory<>("categoryName"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        loadTable();
     }
 
 }

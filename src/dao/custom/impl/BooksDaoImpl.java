@@ -31,7 +31,7 @@ public class BooksDaoImpl implements BooksDao {
         while (rst.next()) {            
             BooksEntity entity = new BooksEntity(rst.getInt("BookID"), 
                     rst.getString("Title"), rst.getString("Author"), 
-                    rst.getInt("PublicationYear"), rst.getString("Category Name"),rst.getString("status"));
+                    rst.getInt("PublicationYear"), rst.getString("CategoryName"),rst.getString("status"));
             booksEntities.add(entity);
         }
         return booksEntities;
