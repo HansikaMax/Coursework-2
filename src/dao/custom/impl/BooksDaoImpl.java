@@ -15,12 +15,12 @@ public class BooksDaoImpl implements BooksDao {
     }
 
     @Override
-    public boolean delete(String id) throws Exception {
+    public boolean delete(Integer id) throws Exception {
         return CrudUtil.executeUpdate("DELETE FROM Books WHERE BookID = ?", id);
     }
 
     @Override
-    public BooksEntity get(String id) throws Exception {
+    public BooksEntity get(Integer id) throws Exception {
         return null;
     }
 
@@ -41,5 +41,5 @@ public class BooksDaoImpl implements BooksDao {
     public boolean update(BooksEntity t) throws Exception {
         return CrudUtil.executeUpdate("UPDATE Books SET Title=?,Author=?,PublicationYear=?,CategoryName=? WHERE BookID=?",t.getTitle(),t.getAuthor(),t.getPublicationYear(),t.getCategoryName(),t.getBookID());
     }
-    
+
 }

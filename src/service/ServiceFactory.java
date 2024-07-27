@@ -1,6 +1,6 @@
 package service;
 
-import dao.SuperDao;
+import service.custom.impl.BooksServiceImpl;
 
 public class ServiceFactory {
     
@@ -20,7 +20,7 @@ public SuperService getService(ServiceTypes type){
         case BookCategories:
             return null;
         case Books:
-            return null;
+            return new BooksServiceImpl();
         case Members:
             return null; 
         default:

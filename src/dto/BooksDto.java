@@ -6,16 +6,18 @@ public class BooksDto {
     private String author;
     private int publicationYear;
     private String categoryName;
+    private String status;
    
     public BooksDto() {
     }
 
-    public BooksDto(int bookID, String title, String author, int publicationYear, String categoryName) {
+    public BooksDto(int bookID, String title, String author, int publicationYear, String categoryName, String status) {
         this.bookID = bookID;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
         this.categoryName = categoryName;
+        this.status=status;
     }
 
     public int getBookID() {
@@ -55,10 +57,11 @@ public class BooksDto {
     }
 
     public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+        this.categoryName = categoryName;   
     }
-
     
-   
-
+    public String getStatus(){
+        status="available";
+        return status;
+    }
 }
