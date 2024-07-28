@@ -2,9 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;

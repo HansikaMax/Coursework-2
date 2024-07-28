@@ -1,5 +1,7 @@
 package dao;
 
+import dao.custom.impl.BooksDaoImpl;
+
 public class DaoFactory {
     
     private static DaoFactory daoFactory;
@@ -18,7 +20,7 @@ public SuperDao getDao(DaoTypes type){
         case BookCategories:
             return null;
         case Books:
-            return null;
+            return new BooksDaoImpl();
         case Members:
             return null; 
         default:

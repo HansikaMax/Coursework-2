@@ -1,6 +1,6 @@
 package service;
 
-import dao.SuperDao;
+import service.custom.impl.BooksServiceImpl;
 
 public class ServiceFactory {
     
@@ -15,12 +15,12 @@ public class ServiceFactory {
         return serviceFactory;
     }
 
-public SuperService getService(ServiceTypes type){
+public SuperService getService(ServiceType type){
     switch (type) {
         case BookCategories:
             return null;
         case Books:
-            return null;
+            return new BooksServiceImpl();
         case Members:
             return null; 
         default:
@@ -28,7 +28,7 @@ public SuperService getService(ServiceTypes type){
     }
 }
 
-public enum ServiceTypes{
+public enum ServiceType{
     BookCategories, Books, Members;
 }
 }
