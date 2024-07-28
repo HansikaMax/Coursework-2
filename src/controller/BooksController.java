@@ -12,11 +12,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import service.ServiceFactory;
 import service.custom.BooksService;
 
@@ -86,19 +88,63 @@ public class BooksController {
 
       @FXML
     void deleteOnAction(ActionEvent event) {
+    try {
+        Integer bookID= Integer.parseInt(txtBookID.getText());
+        delete(bookID);
+        new Alert(Alert.AlertType.CONFIRMATION,"Book Deleted Successfully!!!").show();
+        clearForm();
+        loadTable();
+    } catch (Exception e) {
+        e.printStackTrace();
+        new Alert(Alert.AlertType.ERROR,"Error While Deleting Book").show();
+    }
 
     }
 
     @FXML
-    void saveOnAction(ActionEvent event) {
+    void saveOnAction(ActionEvent event) throws Exception {
+    try{
+     BooksDto booksDto=new BooksDto(Integer.parseInt(txtBookID.getText()), txtTitle.getText(), txtAuthor.getText(), Integer.parseInt(txtPbYear.getText()),txtCtName.getText(),null);
+     save(booksDto);
+     new Alert(Alert.AlertType.CONFIRMATION,"Book Saved Successfully!!!").show();
+    clearForm();
+    loadTable();
+
+    }   catch(Exception ex){
+        ex.printStackTrace();
+        new Alert(Alert.AlertType.ERROR,"Error While Saving Book").show();
+    }
 
     }
 
     @FXML
     void updateOnAction(ActionEvent event) {
+try {
+    BooksDto booksDto=new BooksDto(Integer.parseInt(txtBookID.getText()), txtTitle.getText(), txtAuthor.getText(), Integer.parseInt(txtPbYear.getText()),txtCtName.getText(),null);
+    update(booksDto);
+    new Alert(Alert.AlertType.CONFIRMATION,"Book Updated Successfully!!!").show();
+    clearForm();
+    loadTable();
+} catch (Exception e) {
+    e.printStackTrace();
+     new Alert(Alert.AlertType.ERROR,"Error While Updating Book").show();
+}
 
     }
 
+
+    @FXML
+    void selectOnMouseClicked(MouseEvent event) {
+        BooksDto selectBooksDto=tblBooks.getSelectionModel().getSelectedItem();
+        txtBookID.setText(Integer.toString(selectBooksDto.getBookID()));
+        txtTitle.setText(selectBooksDto.getTitle());
+        txtAuthor.setText(selectBooksDto.getAuthor());
+        txtPbYear.setText(Integer.toString(selectBooksDto.getPublicationYear()));
+        txtCtName.setText(selectBooksDto.getCategoryName());
+        
+    }
+
+///////////
     private BooksService booksService = (BooksService)ServiceFactory.getInstance().getService(ServiceFactory.ServiceType.Books);
     
     public String save(BooksDto booksDto) throws Exception{
@@ -121,7 +167,7 @@ public class BooksController {
         return null;
     }
 
-
+////////////
     private void loadTable() throws Exception {
        
        ArrayList<BooksDto> booksList=getAll();
@@ -145,4 +191,11 @@ public class BooksController {
         loadTable();
     }
 
+    private void clearForm(){
+        txtBookID.setText("");
+        txtTitle.setText("");
+        txtAuthor.setText("");
+        txtPbYear.setText("");
+        txtCtName.setText("");
+    }
 }

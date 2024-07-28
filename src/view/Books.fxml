@@ -48,7 +48,7 @@
       <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="459.0" layoutY="205.0" onAction="#saveOnAction" style="-fx-background-color: #74b9ff;" text="Save" />
       <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="521.0" layoutY="205.0" onAction="#deleteOnAction" style="-fx-background-color: #a29bfe;" text="Delete" />
       <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="384.0" layoutY="205.0" onAction="#updateOnAction" style="-fx-background-color: #81ecec;" text="Update" />
-      <TableView fx:id="tblBooks" layoutX="3.0" layoutY="256.0" prefHeight="272.0" prefWidth="752.0">
+      <TableView fx:id="tblBooks" layoutX="3.0" layoutY="256.0" onMouseClicked="#selectOnMouseClicked" prefHeight="272.0" prefWidth="752.0">
         <columns>
           <TableColumn fx:id="colBookID" prefWidth="84.0" text="Book ID" />
           <TableColumn fx:id="colTitle" prefWidth="160.0" text="Title" />

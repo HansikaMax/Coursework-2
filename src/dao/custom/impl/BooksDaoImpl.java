@@ -11,7 +11,7 @@ public class BooksDaoImpl implements BooksDao {
 
     @Override
     public boolean create(BooksEntity t) throws Exception {
-        return CrudUtil.executeUpdate("INSERT INTO Books VALUES(?,?,?,?,?)", t.getBookID(),t.getTitle(),t.getAuthor(),t.getPublicationYear(),t.getCategoryName(),t.getStatus());
+        return CrudUtil.executeUpdate("INSERT INTO Books VALUES(?,?,?,?,?,?)", t.getBookID(),t.getTitle(),t.getAuthor(),t.getPublicationYear(),t.getCategoryName(),t.getStatus());
     }
 
     @Override
