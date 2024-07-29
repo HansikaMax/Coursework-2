@@ -19,43 +19,43 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtFirstName" layoutX="129.0" layoutY="59.0" prefWidth="200" />
+        <TextField fx:id="txtFirstName" layoutX="129.0" layoutY="59.0" prefWidth="200" promptText="First Name" />
 
         <Label fx:id="lblLastName" layoutX="408.0" layoutY="60.0" text="Last Name:" textFill="#d3a51a">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtLastName" layoutX="514.0" layoutY="59.0" prefWidth="200" />
+        <TextField fx:id="txtLastName" layoutX="514.0" layoutY="59.0" prefWidth="200" promptText="Last Name" />
 
         <Label fx:id="lblGender" layoutX="20" layoutY="140" text="Gender:" textFill="#cd2b2b">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtGender" layoutX="129.0" layoutY="136.0" prefWidth="200" />
+        <TextField fx:id="txtGender" layoutX="129.0" layoutY="136.0" prefWidth="200" promptText="Gender" />
 
         <Label fx:id="lblBirthDate" layoutX="411.0" layoutY="138.0" text="Birth Date:" textFill="#100c7c">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtBirthDate" layoutX="514.0" layoutY="139.0" prefWidth="200" />
+        <TextField fx:id="txtBirthDate" layoutX="514.0" layoutY="139.0" prefWidth="200" promptText="Birth Date(yyyy-MM-dd)" />
 
         <Label fx:id="lblAddress" layoutX="20" layoutY="220" text="Address:" textFill="#9eda25">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtAddress" layoutX="129.0" layoutY="216.0" prefWidth="200" />
+        <TextField fx:id="txtAddress" layoutX="129.0" layoutY="216.0" prefWidth="200" promptText="Address" />
 
         <Label fx:id="lblPhoneNumber" layoutX="392.0" layoutY="220.0" text="Phone Number:" textFill="#c622a8">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtPhoneNumber" layoutX="527.0" layoutY="216.0" prefWidth="200" />
+        <TextField fx:id="txtPhoneNumber" layoutX="514.0" layoutY="216.0" prefWidth="200" promptText="Phone Number" />
 
         <Label fx:id="lblEmail" layoutX="20" layoutY="300" text="Email:" textFill="#28d785">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtEmail" layoutX="129.0" layoutY="297.0" prefWidth="200" />
+        <TextField fx:id="txtEmail" layoutX="129.0" layoutY="297.0" prefWidth="200" promptText="Email" />
 
         <Button fx:id="btnAddMember" layoutX="458.0" layoutY="347.0" onAction="#addOnAction" style="-fx-background-color: #55efc4;" text="Add Member" />
         <Button fx:id="btnUpdateMember" layoutX="590.0" layoutY="347.0" onAction="#updateOnAction" style="-fx-background-color: #74b9ff;" text="Update Member" />
