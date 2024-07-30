@@ -8,60 +8,60 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="620.0" prefWidth="954.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="your.package.MembersController">
+<AnchorPane prefHeight="620.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MembersController">
     <children>
-        <Label fx:id="lblTitle" layoutX="253.0" layoutY="14.0" text="Members" textFill="#2216d3">
+        <Label fx:id="lblTitle" alignment="CENTER" layoutX="384.0" layoutY="14.0" prefHeight="45.0" prefWidth="118.0" text="Members" textFill="#2216d3">
          <font>
-            <Font size="24.0" />
+            <Font size="26.0" />
          </font></Label>
 
-        <Label fx:id="lblFirstName" layoutX="20" layoutY="60" text="First Name:" textFill="#f2ab41">
+        <Label fx:id="lblFirstName" layoutX="22.0" layoutY="128.0" text="First Name:" textFill="#f2ab41">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtFirstName" layoutX="129.0" layoutY="59.0" prefWidth="200" promptText="First Name" />
+        <TextField fx:id="txtFirstName" layoutX="129.0" layoutY="126.0" prefWidth="200" promptText="First Name" />
 
-        <Label fx:id="lblLastName" layoutX="408.0" layoutY="60.0" text="Last Name:" textFill="#d3a51a">
+        <Label fx:id="lblLastName" layoutX="470.0" layoutY="129.0" text="Last Name:" textFill="#d3a51a">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtLastName" layoutX="514.0" layoutY="59.0" prefWidth="200" promptText="Last Name" />
+        <TextField fx:id="txtLastName" layoutX="561.0" layoutY="127.0" prefWidth="200" promptText="Last Name" />
 
-        <Label fx:id="lblGender" layoutX="20" layoutY="140" text="Gender:" textFill="#cd2b2b">
+        <Label fx:id="lblGender" layoutX="20.0" layoutY="176.0" text="Gender:" textFill="#cd2b2b">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtGender" layoutX="129.0" layoutY="136.0" prefWidth="200" promptText="Gender" />
+        <TextField fx:id="txtGender" layoutX="129.0" layoutY="174.0" prefWidth="200" promptText="Gender" />
 
-        <Label fx:id="lblBirthDate" layoutX="411.0" layoutY="138.0" text="Birth Date:" textFill="#100c7c">
+        <Label fx:id="lblBirthDate" layoutX="477.0" layoutY="201.0" text="Birth Date:" textFill="#100c7c">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtBirthDate" layoutX="514.0" layoutY="139.0" prefWidth="200" promptText="Birth Date(yyyy-MM-dd)" />
+        <TextField fx:id="txtBirthDate" layoutX="561.0" layoutY="200.0" prefWidth="200" promptText="Birth Date(yyyy-MM-dd)" />
 
-        <Label fx:id="lblAddress" layoutX="20" layoutY="220" text="Address:" textFill="#9eda25">
+        <Label fx:id="lblAddress" layoutX="17.0" layoutY="246.0" text="Address:" textFill="#9eda25">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtAddress" layoutX="129.0" layoutY="216.0" prefWidth="200" promptText="Address" />
+        <TextField fx:id="txtAddress" layoutX="129.0" layoutY="243.0" prefHeight="29.0" prefWidth="258.0" promptText="Address" />
 
-        <Label fx:id="lblPhoneNumber" layoutX="392.0" layoutY="220.0" text="Phone Number:" textFill="#c622a8">
+        <Label fx:id="lblPhoneNumber" layoutX="443.0" layoutY="271.0" text="Phone Number:" textFill="#c622a8">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtPhoneNumber" layoutX="514.0" layoutY="216.0" prefWidth="200" promptText="Phone Number" />
+        <TextField fx:id="txtPhoneNumber" layoutX="561.0" layoutY="270.0" prefWidth="200" promptText="Phone Number" />
 
         <Label fx:id="lblEmail" layoutX="20" layoutY="300" text="Email:" textFill="#28d785">
          <font>
             <Font size="18.0" />
          </font></Label>
-        <TextField fx:id="txtEmail" layoutX="129.0" layoutY="297.0" prefWidth="200" promptText="Email" />
+        <TextField fx:id="txtEmail" layoutX="129.0" layoutY="297.0" prefHeight="26.0" prefWidth="258.0" promptText="Email" />
 
         <Button fx:id="btnAddMember" layoutX="458.0" layoutY="347.0" onAction="#addOnAction" style="-fx-background-color: #55efc4;" text="Add Member" />
         <Button fx:id="btnUpdateMember" layoutX="590.0" layoutY="347.0" onAction="#updateOnAction" style="-fx-background-color: #74b9ff;" text="Update Member" />
         <Button fx:id="btnDeleteMember" layoutX="742.0" layoutY="347.0" onAction="#deleteOnAction" style="-fx-background-color: #a29bfe;" text="Delete Member" />
 
-        <TableView fx:id="tableViewMembers" layoutY="424.0" prefHeight="196.0" prefWidth="954.0">
+        <TableView fx:id="tableViewMembers" layoutY="424.0" onMouseClicked="#selectOnMouseClicked" prefHeight="196.0" prefWidth="954.0">
             <columns>
                 <TableColumn fx:id="colMemberID" prefWidth="67.0" text="Member ID" />
                 <TableColumn fx:id="colFirstName" prefWidth="93.0" text="First Name" />
@@ -73,5 +73,11 @@
                 <TableColumn fx:id="colEmail" prefWidth="174.0" text="Email" />
             </columns>
         </TableView>
+      <Label fx:id="lblMemberID" layoutX="22.0" layoutY="74.0" text="Member ID" textFill="#1f6df5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtMemberID" layoutX="129.0" layoutY="73.0" prefWidth="200" promptText="Member ID" />
     </children>
 </AnchorPane>

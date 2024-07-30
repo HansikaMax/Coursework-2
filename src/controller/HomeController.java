@@ -57,8 +57,13 @@ public class HomeController {
     }
 
     @FXML
-    void membersOnAction(ActionEvent event) {
-
+    void membersOnAction(ActionEvent event) throws IOException {
+      URL resource = this.getClass().getResource("/view/Members.fxml");
+      Parent root = FXMLLoader.load(resource);
+      Stage stage=new Stage();
+      stage.setScene(new Scene(root));
+      stage.show();
+      stage.setTitle("Members Form");
     }
 
     @FXML
