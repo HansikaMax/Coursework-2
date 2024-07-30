@@ -1,5 +1,6 @@
 package service;
 
+import service.custom.impl.BookCategoriesServiceImpl;
 import service.custom.impl.BooksServiceImpl;
 import service.custom.impl.MembersServiceImpl;
 
@@ -19,7 +20,7 @@ public class ServiceFactory {
 public SuperService getService(ServiceType type){
     switch (type) {
         case BookCategories:
-            return null;
+            return new BookCategoriesServiceImpl();
         case Books:
             return new BooksServiceImpl();
         case Members:
