@@ -36,8 +36,14 @@ public class HomeController {
     private Label lblTitle;
 
     @FXML
-    void bookTypesOnAction(ActionEvent event) {
-
+    void bookTypesOnAction(ActionEvent event) throws IOException {
+      URL resource = this.getClass().getResource("/view/BookCategories.fxml");
+      Parent root = FXMLLoader.load(resource);
+      Stage stage=new Stage();
+      stage.setScene(new Scene(root));
+      stage.show();
+      stage.setTitle("Book Categories Form");
+      
     }
 
     @FXML

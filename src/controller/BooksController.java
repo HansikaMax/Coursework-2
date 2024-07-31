@@ -160,7 +160,7 @@ try {
        return booksService.getAll();
     }
 
-    public BooksDto get(String itemCode) throws Exception{
+    public BooksDto get(Integer bookID) throws Exception{
         return null;
     }
 

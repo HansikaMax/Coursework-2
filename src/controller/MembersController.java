@@ -2,7 +2,6 @@ package controller;
 
 import java.util.ArrayList;
 
-import dto.BooksDto;
 import dto.MembersDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -180,15 +179,15 @@ public class MembersController {
        return membersService.update(membersDto);
     }
 
-    public String delete(Integer bookID) throws Exception{
-       return membersService.delete(bookID);
+    public String delete(Integer memberID) throws Exception{
+       return membersService.delete(memberID);
     }
 
     public ArrayList<MembersDto> getAll() throws Exception{
        return membersService.getAll();
     }
 
-    public BooksDto get(String itemCode) throws Exception{
+    public MembersDto get(Integer memberID) throws Exception{
         return null;
     }
 
