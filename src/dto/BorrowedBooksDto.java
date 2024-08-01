@@ -1,17 +1,28 @@
 package dto;
 
-import java.util.Date;
-
 public class BorrowedBooksDto {
     private int borrowId;
     private int bookId;
     private String bookName;
     private int memberId;
-    private Date borrowedDate;
-    private Date returnDate;
-    private Date actualReturnDate;
+    private String borrowedDate;
+    private String  returnDate;
+    private String  actualReturnDate;
     private double lateFee;
+
     
+   
+    public BorrowedBooksDto(int borrowId, int bookId, String bookName, int memberId, String borrowedDate,
+            String returnDate, String actualReturnDate, double lateFee) {
+        this.borrowId = borrowId;
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.memberId = memberId;
+        this.borrowedDate = borrowedDate;
+        this.returnDate = returnDate;
+        this.actualReturnDate = actualReturnDate;
+        this.lateFee = lateFee;
+    }
     public int getBorrowId() {
         return borrowId;
     }
@@ -36,22 +47,22 @@ public class BorrowedBooksDto {
     public void setMemberId(int memberId) {
         this.memberId = memberId;
     }
-    public Date getBorrowedDate() {
+    public String getBorrowedDate() {
         return borrowedDate;
     }
-    public void setBorrowedDate(Date borrowedDate) {
+    public void setBorrowedDate(String borrowedDate) {
         this.borrowedDate = borrowedDate;
     }
-    public Date getReturnDate() {
+    public String getReturnDate() {
         return returnDate;
     }
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(String returnDate) {
         this.returnDate = returnDate;
     }
-    public Date getActualReturnDate() {
+    public String getActualReturnDate() {
         return actualReturnDate;
     }
-    public void setActualReturnDate(Date actualReturnDate) {
+    public void setActualReturnDate(String actualReturnDate) {
         this.actualReturnDate = actualReturnDate;
     }
     public double getLateFee() {
@@ -60,6 +71,12 @@ public class BorrowedBooksDto {
     public void setLateFee(double lateFee) {
         this.lateFee = lateFee;
     }
+
+    
+    
+   
+    
+    
 
     
 }

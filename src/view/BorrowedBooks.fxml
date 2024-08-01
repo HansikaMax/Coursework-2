@@ -67,5 +67,11 @@
          </font>
       </Label>
       <TextField fx:id="txtBorrowID" layoutX="127.0" layoutY="66.0" promptText="Borrow ID" />
+      <Label fx:id="txtacrDay" layoutX="328.0" layoutY="173.0" text="Acual Return Day">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtActualReturnDay" layoutX="477.0" layoutY="172.0" promptText="Actual Return Date" />
    </children>
 </AnchorPane>
