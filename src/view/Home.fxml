@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
       <Label fx:id="lblTitle" alignment="CENTER" layoutX="154.0" layoutY="14.0" prefHeight="65.0" prefWidth="292.0" text="LBMS HOME INTERFACE" textFill="#197279">
@@ -28,12 +27,7 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnBorrowBooks" buttonType="RAISED" layoutX="79.0" layoutY="208.0" onAction="#borrowBooksOnAction" prefHeight="65.0" prefWidth="136.0" style="-fx-background-color: #9b59b6;" text="Borrow Books">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="btnOverdueMembers" buttonType="RAISED" layoutX="324.0" layoutY="208.0" onAction="#overdueMembersOnAction" prefHeight="52.0" prefWidth="170.0" style="-fx-background-color: #f1c40f;" text="Overdue Members">
+      <JFXButton fx:id="btnBorrowBooks" buttonType="RAISED" layoutX="218.0" layoutY="211.0" onAction="#borrowBooksOnAction" prefHeight="65.0" prefWidth="136.0" style="-fx-background-color: #9b59b6;" text="Borrow Books">
          <font>
             <Font size="18.0" />
          </font>

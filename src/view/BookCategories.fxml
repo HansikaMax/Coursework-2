@@ -1,47 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookCategoriesController">
-   <children>
-      <Label fx:id="lblTitle" alignment="CENTER" layoutX="186.0" layoutY="14.0" prefHeight="41.0" prefWidth="184.0" text="Book Categories" textFill="#d33131">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblCategoryID" layoutX="3.0" layoutY="97.0" text="Category ID" textFill="#2db21c">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblCategoryName" layoutX="5.0" layoutY="140.0" text="Category Name" textFill="#861dd7">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblDescription" layoutX="5.0" layoutY="189.0" text="Description" textFill="#dd6c0e">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtCategoryID" layoutX="140.0" layoutY="95.0" promptText="Category ID" />
-      <TextField fx:id="txtCategoryName" layoutX="140.0" layoutY="139.0" promptText="Category Name" />
-      <TextField fx:id="txtDescription" layoutX="106.0" layoutY="181.0" prefHeight="26.0" prefWidth="489.0" promptText="Description" />
-      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="310.0" layoutY="226.0" onAction="#saveOnAction" style="-fx-background-color: #ff7675;" text="Save" />
-      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="377.0" layoutY="226.0" onAction="#updateOnAction" style="-fx-background-color: #00cec9;" text="Update" />
-      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="454.0" layoutY="226.0" onAction="#deleteOnAction" style="-fx-background-color: #74b9ff;" text="Delete" />
-      <TableView fx:id="tblBookCategories" layoutX="2.0" layoutY="259.0" onMouseClicked="#selectOnMouseClicked" prefHeight="225.0" prefWidth="600.0">
-        <columns>
-          <TableColumn fx:id="colCategoryID" prefWidth="104.0" text="Category ID" />
-          <TableColumn fx:id="colCategoryName" prefWidth="128.0" text="Category Name" />
-            <TableColumn fx:id="colDescription" prefWidth="365.0" text="Description" />
-        </columns>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.BorrowedBookController">
+   <VBox spacing="10" alignment="TOP_CENTER" layoutX="14.0" layoutY="14.0">
+      <Label text="Borrowed Books Management" />
+      <TextField fx:id="txtBorrowId" promptText="Borrow ID" />
+      <TextField fx:id="txtBookId" promptText="Book ID" />
+      <TextField fx:id="txtBookName" promptText="Book Name" />
+      <TextField fx:id="txtMemberId" promptText="Member ID" />
+      <TextField fx:id="txtBorrowedDate" promptText="Borrowed Date (yyyy-MM-dd)" />
+      <TextField fx:id="txtReturnDate" promptText="Return Date (yyyy-MM-dd)" />
+      <TextField fx:id="txtActualReturnDate" promptText="Actual Return Date (yyyy-MM-dd)" />
+      <TextField fx:id="txtLateFee" promptText="Late Fee" />
+      <Button text="Add" onAction="#handleAddBorrowedBook"/>
+      <Button text="Update" onAction="#handleUpdateBorrowedBook"/>
+      <Button text="Delete" onAction="#handleDeleteBorrowedBook"/>
+      <TableView fx:id="borrowedBooksTable" prefHeight="200.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="borrowIdCol" text="Borrow ID" />
+            <TableColumn fx:id="bookIdCol" text="Book ID" />
+            <TableColumn fx:id="bookNameCol" text="Book Name" />
+            <TableColumn fx:id="memberIdCol" text="Member ID" />
+            <TableColumn fx:id="borrowedDateCol" text="Borrowed Date" />
+            <TableColumn fx:id="returnDateCol" text="Return Date" />
+            <TableColumn fx:id="actualReturnDateCol" text="Actual Return Date" />
+            <TableColumn fx:id="lateFeeCol" text="Late Fee" />
+         </columns>
       </TableView>
-   </children>
+   </VBox>
 </AnchorPane>

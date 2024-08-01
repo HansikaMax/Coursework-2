@@ -58,7 +58,13 @@ public class HomeController {
     }
 
     @FXML
-    void borrowBooksOnAction(ActionEvent event) {
+    void borrowBooksOnAction(ActionEvent event) throws IOException {
+      URL resource = this.getClass().getResource("/view/BorrowedBooks.fxml");
+      Parent root = FXMLLoader.load(resource);
+      Stage stage=new Stage();
+      stage.setScene(new Scene(root));
+      stage.show();
+      stage.setTitle("Borrowed Book Form");
 
     }
 
@@ -72,9 +78,5 @@ public class HomeController {
       stage.setTitle("Members Form");
     }
 
-    @FXML
-    void overdueMembersOnAction(ActionEvent event) {
-
-    }
 
 }
