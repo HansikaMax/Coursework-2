@@ -46,7 +46,7 @@
       <TextField fx:id="txtMemberID" layoutX="127.0" layoutY="182.0" promptText="Member ID" />
       <TextField fx:id="txtBorrowDate" layoutX="477.0" layoutY="78.0" promptText="Borrow Date" />
       <TextField fx:id="txtReturnDate" layoutX="477.0" layoutY="125.0" promptText="Return Date" />
-      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="468.0" layoutY="239.0" onAction="#addOnAction" style="-fx-background-color: #a29bfe;" text="Add" />
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="468.0" layoutY="239.0" onAction="#updateOnAction" style="-fx-background-color: #a29bfe;" text="Update" />
       <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="393.0" layoutY="239.0" onAction="#saveOnAction" style="-fx-background-color: #81ecec;" text="Save" />
       <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="541.0" layoutY="241.0" onAction="#deleteOnAction" style="-fx-background-color: #fd79a8;" text="Delete" />
       <TableView fx:id="tblBorrowedBooks" layoutY="286.0" prefHeight="218.0" prefWidth="687.0">
@@ -67,11 +67,17 @@
          </font>
       </Label>
       <TextField fx:id="txtBorrowID" layoutX="127.0" layoutY="66.0" promptText="Borrow ID" />
-      <Label fx:id="txtacrDay" layoutX="328.0" layoutY="173.0" text="Acual Return Day">
+      <Label fx:id="txtLatefee" layoutX="31.0" layoutY="230.0" text="Late fee">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <TextField fx:id="txtActualReturnDay" layoutX="477.0" layoutY="172.0" promptText="Actual Return Date" />
+      <Label fx:id="txtacrDay1" layoutX="344.0" layoutY="174.0" text="Acual Return Day">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtLatefee" layoutX="118.0" layoutY="228.0" promptText="Late fee" />
    </children>
 </AnchorPane>
