@@ -2,6 +2,7 @@ package dao;
 
 import dao.custom.impl.BookCategoriesDaoImpl;
 import dao.custom.impl.BooksDaoImpl;
+import dao.custom.impl.BorrowedBooksDaoImpl;
 import dao.custom.impl.MembersDaoImpl;
 
 public class DaoFactory {
@@ -25,12 +26,14 @@ public SuperDao getDao(DaoTypes type){
             return new BooksDaoImpl();
         case Members:
             return new MembersDaoImpl(); 
+        case BorrowedBooks:
+             return new BorrowedBooksDaoImpl();    
         default:
             return null;
     }
 }
 
 public enum DaoTypes{
-    BookCategories, Books, Members;
+    BookCategories, Books, Members,BorrowedBooks;
 }
 }
